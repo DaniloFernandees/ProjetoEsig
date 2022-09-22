@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ProjetoEsigprodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'ProjetoEsigprod.dbo.Cargo' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Cargo">
+          <Property Name="ID" Type="int" />
+          <Property Name="Nome" Type="varchar" MaxLength="255" />
+          <Property Name="Salario" Type="money" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'ProjetoEsigprod.dbo.Pessoa' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Pessoa">
+          <Property Name="ID" Type="int" />
+          <Property Name="Nome" Type="varchar" MaxLength="255" />
+          <Property Name="Cidade" Type="varchar" MaxLength="255" />
+          <Property Name="Email" Type="varchar" MaxLength="255" />
+          <Property Name="CEP" Type="varchar" MaxLength="255" />
+          <Property Name="Enderco" Type="varchar" MaxLength="255" />
+          <Property Name="Pais" Type="varchar" MaxLength="255" />
+          <Property Name="Usuario" Type="varchar" MaxLength="255" />
+          <Property Name="Telefone" Type="varchar" MaxLength="255" />
+          <Property Name="Data_Nascimento" Type="varchar" MaxLength="255" />
+          <Property Name="Cargo_ID" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ProjetoEsigprod.dbo.Pessoa_salario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Pessoa_salario">
+          <Key>
+            <PropertyRef Name="Pessoa_ID" />
+            <PropertyRef Name="Nome" />
+            <PropertyRef Name="Salario" />
+          </Key>
+          <Property Name="Pessoa_ID" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Salario" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ProjetoEsigprodModelStoreContainer">
+          <EntitySet Name="Pessoa_salario" EntityType="Self.Pessoa_salario" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Pessoa_salario].[Pessoa_ID] AS [Pessoa_ID], 
+    [Pessoa_salario].[Nome] AS [Nome], 
+    [Pessoa_salario].[Salario] AS [Salario]
+    FROM [dbo].[Pessoa_salario] AS [Pessoa_salario]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProjetoEsigprodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Pessoa_salario">
+          <Key>
+            <PropertyRef Name="Pessoa_ID" />
+            <PropertyRef Name="Nome" />
+            <PropertyRef Name="Salario" />
+          </Key>
+          <Property Name="Pessoa_ID" Type="Int32" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Salario" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ProjetoEsigprodEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Pessoa_salario" EntityType="Self.Pessoa_salario" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProjetoEsigprodModelStoreContainer" CdmEntityContainer="ProjetoEsigprodEntities1">
+          <EntitySetMapping Name="Pessoa_salario">
+            <EntityTypeMapping TypeName="ProjetoEsigprodModel.Pessoa_salario">
+              <MappingFragment StoreEntitySet="Pessoa_salario">
+                <ScalarProperty Name="Pessoa_ID" ColumnName="Pessoa_ID" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Salario" ColumnName="Salario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
