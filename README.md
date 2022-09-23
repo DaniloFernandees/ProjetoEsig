@@ -33,6 +33,5 @@ o banco.
 
 O projeto me proporcionou em pouco tempo um conhecimento tanto nas linguagens C#, Asp.Net, 
 HTML e CSS como em bancdo de dados SQL Server. Esse aprendizado mostrou o quanto eu posso
-crescer e melhorar a cada dia sendo esforçado e procurando cada vez mais soluções para os
-problemas existentes dentro do código escrito e de fato a experiência desse projeto mostrou
-o quanto sou persistente em resolver uma inconsistência.
+crescer e melhorar a cada dia sendo esforçado e procurando as soluções para os problemas 
+existentes dentro do código escrito.
