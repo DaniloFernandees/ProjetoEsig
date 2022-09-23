@@ -13,10 +13,10 @@ namespace ProjetoEsig.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ProjetoEsigprodEntities1 : DbContext
+    public partial class ProjetoEsigprodEntities3 : DbContext
     {
-        public ProjetoEsigprodEntities1()
-            : base("name=ProjetoEsigprodEntities1")
+        public ProjetoEsigprodEntities3()
+            : base("name=ProjetoEsigprodEntities3")
         {
         }
     

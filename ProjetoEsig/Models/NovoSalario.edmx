@@ -27,26 +27,17 @@ warning 6013: The table/view 'ProjetoEsigprod.dbo.Pessoa' does not have a primar
           <Property Name="Data_Nascimento" Type="varchar" MaxLength="255" />
           <Property Name="Cargo_ID" Type="int" />
         </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ProjetoEsigprod.dbo.Pessoa_salario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Pessoa_salario">
           <Key>
             <PropertyRef Name="Pessoa_ID" />
-            <PropertyRef Name="Nome" />
-            <PropertyRef Name="Salario" />
           </Key>
-          <Property Name="Pessoa_ID" Type="int" Nullable="false" />
-          <Property Name="Nome" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="Salario" Type="money" Nullable="false" />
+          <Property Name="Pessoa_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="255" />
+          <Property Name="Cargo_ID" Type="varchar" MaxLength="1" />
+          <Property Name="Salario" Type="money" />
         </EntityType>
         <EntityContainer Name="ProjetoEsigprodModelStoreContainer">
-          <EntitySet Name="Pessoa_salario" EntityType="Self.Pessoa_salario" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Pessoa_salario].[Pessoa_ID] AS [Pessoa_ID], 
-    [Pessoa_salario].[Nome] AS [Nome], 
-    [Pessoa_salario].[Salario] AS [Salario]
-    FROM [dbo].[Pessoa_salario] AS [Pessoa_salario]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="Pessoa_salario" EntityType="Self.Pessoa_salario" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -56,14 +47,13 @@ warning 6002: The table/view 'ProjetoEsigprod.dbo.Pessoa_salario' does not have 
         <EntityType Name="Pessoa_salario">
           <Key>
             <PropertyRef Name="Pessoa_ID" />
-            <PropertyRef Name="Nome" />
-            <PropertyRef Name="Salario" />
           </Key>
-          <Property Name="Pessoa_ID" Type="Int32" Nullable="false" />
-          <Property Name="Nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Salario" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Pessoa_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Cargo_ID" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Salario" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
-        <EntityContainer Name="ProjetoEsigprodEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ProjetoEsigprodEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Pessoa_salario" EntityType="Self.Pessoa_salario" />
         </EntityContainer>
       </Schema>
@@ -71,12 +61,13 @@ warning 6002: The table/view 'ProjetoEsigprod.dbo.Pessoa_salario' does not have 
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ProjetoEsigprodModelStoreContainer" CdmEntityContainer="ProjetoEsigprodEntities1">
+        <EntityContainerMapping StorageEntityContainer="ProjetoEsigprodModelStoreContainer" CdmEntityContainer="ProjetoEsigprodEntities3">
           <EntitySetMapping Name="Pessoa_salario">
             <EntityTypeMapping TypeName="ProjetoEsigprodModel.Pessoa_salario">
               <MappingFragment StoreEntitySet="Pessoa_salario">
                 <ScalarProperty Name="Pessoa_ID" ColumnName="Pessoa_ID" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Cargo_ID" ColumnName="Cargo_ID" />
                 <ScalarProperty Name="Salario" ColumnName="Salario" />
               </MappingFragment>
             </EntityTypeMapping>

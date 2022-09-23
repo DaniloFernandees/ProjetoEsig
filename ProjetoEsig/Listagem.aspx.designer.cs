@@ -24,15 +24,6 @@ namespace ProjetoEsig
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Controle txtID.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtID;
-
-        /// <summary>
         /// Controle txtNome.
         /// </summary>
         /// <remarks>
@@ -51,13 +42,13 @@ namespace ProjetoEsig
         protected global::System.Web.UI.WebControls.TextBox txtCargo_ID;
 
         /// <summary>
-        /// Controle btnCadastrar.
+        /// Controle btnRecalcular.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCadastrar;
+        protected global::System.Web.UI.WebControls.Button btnRecalcular;
 
         /// <summary>
         /// Controle ltMensagem.

@@ -7,13 +7,13 @@ namespace ProjetoEsig.DAO
 {
     public class Nome
     {
-        public static bool Cadastrar(Models.Pessoa_salario pessoa_Salario)
+        public static bool Recalcular(Models.Pessoa_salario salario)
         {
             try 
             {
-                using (var conexao = new Models.ProjetoEsigprodEntities1())
+                using (var conexao = new Models.ProjetoEsigprodEntities3())
                {
-                conexao.Pessoa_salario.Add(pessoa_Salario);
+                conexao.Pessoa_salario.Add(salario);
                 conexao.SaveChanges();
                 return true;
                }

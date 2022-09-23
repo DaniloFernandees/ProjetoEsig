@@ -33,21 +33,18 @@
 <body>
     <form id="form1" runat="server">
         <div class="container">
-            <h1>Listagem dos Salários</h1>
+            <h1>Recalcular os Salários</h1>
             <div class="campo">
-                <asp:Label runat="server" AssociatedControlID="txtID">ID:</asp:Label>
-                <asp:TextBox runat="server" ID="txtID"></asp:TextBox>
-            </div>
-            <div class="campo">
-                <asp:Label runat="server" AssociatedControlID="txtNome">Nome:</asp:Label>
+                <asp:Label runat="server" AssociatedControlID="txtNome">Nome: </asp:Label>
                 <asp:TextBox runat="server" ID="txtNome"></asp:TextBox>
             </div>
             <div class="campo">
-                <asp:Label runat="server" AssociatedControlID="txtCargo_ID">Cargo_ID:</asp:Label>
+                <asp:Label runat="server" AssociatedControlID="txtCargo_ID">Cargo_ID: </asp:Label>
                 <asp:TextBox runat="server" ID="txtCargo_ID"></asp:TextBox>
             </div>
+
             <div class="campo">
-                <asp:Button ID="btnCadastrar" runat="server" Text="Cadastrar" />
+                <asp:Button ID="btnRecalcular" runat="server" Text="Recalcular" />
             </div>
             <p><asp:Literal runat="server" ID="ltMensagem"></asp:Literal></p>
         </div>

@@ -16,6 +16,7 @@ namespace ProjetoEsig.Models
     {
         public int Pessoa_ID { get; set; }
         public string Nome { get; set; }
-        public decimal Salario { get; set; }
+        public string Cargo_ID { get; set; }
+        public Nullable<decimal> Salario { get; set; }
     }
 }

@@ -11,27 +11,25 @@ namespace ProjetoEsig
     {
         protected override void OnInit(EventArgs e)
         {
-            btnCadastrar.Click += BtnCadastrar_Click;
+            btnRecalcular.Click += BtnRecalcular_Click;
         }
 
-        void BtnCadastrar_Click(object sender, EventArgs e)
+        private void BtnRecalcular_Click(object sender, EventArgs e)
         {
-            var PessoaNova = new Models.Pessoa_salario();
-            PessoaNova.ID = txtID.Text;
-            PessoaNova.Nome = txtNome.Text;
-            PessoaNova.Cargo_ID = txtCargo_ID.Text;
+            var novoSalario = new Models.Pessoa_salario();
+            novoSalario.Nome = txtNome.Text;
+            novoSalario.Cargo_ID = txtCargo_ID.Text;
 
-            bool cadastrado DAO.Nome.Cadastrar(PessoaNova);
-            if (cadastrado) 
+            bool calculado = DAO.Nome.Recalcular(novoSalario);
+            if (calculado)
             {
-                ltMensagem.Text = PessoaNova.Nome + "Foi cadastrado(a) com sucesso.";
+                ltMensagem.Text = "O novo salário de " + novoSalario.Nome + " foi adicionado com sucesso.";
             }
-            else 
+            else
             {
-                ltMensagem.Text = "Ocorreu um erro ao tentar cadastrar uma nova pessoa." + PessoaNova.Nome;
+                ltMensagem.Text = "Ocorreu um erro ao tentar adicionar o novo salário de "  + novoSalario.Nome + "!";
             }
         }
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
