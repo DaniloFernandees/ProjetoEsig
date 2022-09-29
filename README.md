@@ -1,6 +1,6 @@
 # ProjetoEsig
 
-O ProjetoEsig foi construido através de informações incluidos dentro do banco de dados da 
+O ProjetoEsig foi construido através de informações incluidas dentro do banco de dados da 
 Microsoft SQL Server e feito uma aplicação dentro do Microsoft Visual Studio.
 
 O intuito do projeto é fazer uma aplicação que consuma os dados do banco e a partir disso
@@ -32,6 +32,6 @@ o banco.
 ## Aprendizados
 
 O projeto me proporcionou em pouco tempo um conhecimento tanto nas linguagens C#, Asp.Net, 
-HTML e CSS como em bancdo de dados SQL Server. Esse aprendizado mostrou o quanto eu posso
+HTML e CSS como em banco de dados SQL Server. Esse aprendizado mostrou o quanto eu posso
 crescer e melhorar a cada dia sendo esforçado e procurando as soluções para os problemas 
 existentes dentro do código escrito.
